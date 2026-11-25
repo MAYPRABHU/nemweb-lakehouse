@@ -25,7 +25,11 @@ FILE_DATE_RE = re.compile(r"_(\d{8})(?:\d{4})?(?=[_.])")
 
 
 def file_name(url: str) -> str:
-    return url.rstrip("/").rsplit("/", 1)[-1]
+    """Last path segment of a URL or local path, e.g. ``.../PUBLIC_X.zip`` -> ``PUBLIC_X.zip``.
+
+    Splits on both ``/`` and ``\\`` so Windows paths from ``LocalSource`` give a bare file name.
+    """
+    return re.split(r"[\\/]", url.rstrip("/\\"))[-1]
 
 
 def file_date(url: str) -> date | None:
