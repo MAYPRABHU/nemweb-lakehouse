@@ -25,7 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - CI (lint, format check, tests with coverage) and a weekly live smoke test against NEMWeb.
 - Pre-commit hooks (ruff lint + format, file hygiene) and Dependabot for pip and GitHub Actions.
 - CI test matrix on both Ubuntu and Windows.
-
+- CLI tests using `--source-dir` (no network needed)
 ### Fixed
 
 - Windows: local file paths are now reduced to a bare file name, so bronze copies are written
