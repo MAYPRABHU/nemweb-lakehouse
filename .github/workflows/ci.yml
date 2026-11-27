@@ -1,7 +1,9 @@
 name: CI
 
 on:
+  # Feature branches are tested via their pull request; pushes to main re-check the merged result.
   push:
+    branches: [main]
   pull_request:
 
 jobs:
